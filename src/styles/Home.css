@@ -1,0 +1,33 @@
+.sidebar_open{
+    color: rgb(85, 62, 62);
+    display: block;
+    background-color: #ffff;
+    border: 2px solid '';
+    position: absolute;
+    padding: 20px;
+    top: 0px;
+    right: 0px;
+    width: 250px;
+    min-height: 85vh;
+    z-index: auto;
+    box-shadow: black 0px 10px 20px ;
+}
+
+.sidebar_close{
+    display: none;
+}
+
+.total{
+    color: #4488cc;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.cartDiv{
+    box-shadow: #4488cc 0px 0px 10px ;
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+}
