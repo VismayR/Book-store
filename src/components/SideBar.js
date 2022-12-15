@@ -21,7 +21,7 @@ const SideBar = (props) => {
 
   return (
     <div className={cartActive ? 'sidebar_open' : 'sidebar_close'}>
-      <h1>Cart</h1>
+      <h1 className=''>Cart</h1>
       <p>Total number of products: <span className='total'>{data.length}</span></p>
       {data && data.map((dat) => (
         <>

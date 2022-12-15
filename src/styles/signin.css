@@ -1,14 +1,25 @@
+.background{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    background-image: url('../assets/images/bgBook3.jpg');
+    background-size: cover;
+    background-position: left;
+    padding-left: 10rem;
+}
 
 .signinForm{
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #bad4fb;
-    margin: 50px auto;
     width: 400px;
     padding: 3rem;
     box-shadow: gray 0px 0px 10px;
     border-radius: 10px;
+    /* margin: 50px; */
 }
 
 .inputs{
@@ -24,7 +35,7 @@
     background-color: blue;
     border: none;
     padding: 1rem;
-    border-radius: 10px;
+    border-radius: 5px;
     width: 100px;
     font-weight: 700;
   }

@@ -49,7 +49,7 @@ const Cards = (props) => {
 
   return (
     <>
-      <div style={{ borderRadius: '15px', width: '300px', height: '230px', padding: 'auto', margin: '10px', boxSizing: 'border-box', backgroundColor:'#4488cc', boxShadow:'3px 5px 10px black' }}>
+      <div style={{ borderRadius: '10px', width: '300px', height: '230px', padding: 'auto', margin: '40px 10px 30px', boxSizing: 'border-box', backgroundColor:'#4488cc', boxShadow:'10px 10px 15px gray' }}>
         <h1 style={{ textAlign: 'center', fontSize: '20px', color:'black' }}>{props.book.name}</h1>
         <p style={{ paddingLeft: '20px', paddingRight: '20px', margin: '0px', fontSize: '12px', height: "70px", color:'black' }}>{props.book.description}</p>
         <div style={{ display: 'flex', justifyContent: 'space-between', marginRight: '20px', marginLeft: '20px', color:'black' }}>

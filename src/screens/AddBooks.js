@@ -65,14 +65,14 @@ const AddBooks = () => {
             subcategory: subCategory,
             author: author
         }
-
         const response = await axios.post(`https://6389ff3cc5356b25a20ec46a.mockapi.io/books`, data).then(navigate('/home'));
     };
 
     return (
-        <div  className='signinForm'>
+        <div className='background'>
+            <div  className='signinForm'>
             <h1>Add Book</h1>
-            <input  className='inputs' type='text' style={{  }} placeholder='Book Title' onChange={(val) => setBookName(val.target.value)} required />
+            <input  className='inputs' type='text' placeholder='Book Title' onChange={(val) => setBookName(val.target.value)} required />
             <textarea  className='inputs' placeholder='Add Description' onChange={(val) => setDescription(val.target.value)} required />
             <select  className='inputs' onChange={handleCatChange}>
                 <option value=''>Select category</option>
@@ -90,6 +90,8 @@ const AddBooks = () => {
             <input  className='inputs' type='number' style={{  }} placeholder='Price' onChange={(val) => setPrice(val.target.value)} required />
             <button className='signin' onClick={postData}>Submit</button>
         </div>
+        </div>
+        
     )
 }
 

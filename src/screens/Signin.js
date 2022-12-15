@@ -40,7 +40,7 @@ const Signin = () => {
   }
 
   return (
-    <div className='container'>
+    <div className='container background'>
       <div  className='signinForm'>
         <h1>Sign In</h1>
         <input className='inputs' type='email' placeholder='Email' onChange={(val) => setEmail(val.target.value)} required />

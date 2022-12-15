@@ -26,7 +26,7 @@ const Nav = () => {
   }
 
   return (
-    <div style={{ backgroundColor: "#4488cc", color: "white", padding: '1rem', display: 'flex', justifyContent: 'space-between' }}>
+    <div style={{ backgroundColor: "#4488cc", color: "white", padding: '1rem 2rem', display: 'flex', justifyContent: 'space-between' }}>
       <div><span style={{fontWeight:'bold', fontSize:'24px'}}>{sessionStorage.getItem('userName')}</span></div>
       <div>
         <button style={{ background: 'none', border: 'none', color: 'white', cursor: 'pointer' }} onClick={() => navigate('/addBook')}>Add book</button>

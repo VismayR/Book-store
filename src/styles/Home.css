@@ -1,14 +1,14 @@
 .sidebar_open{
-    color: rgb(85, 62, 62);
+    color: black;
     display: block;
-    background-color: #ffff;
+    background-color: white;
     border: 2px solid '';
     position: absolute;
     padding: 20px;
     top: 0px;
     right: 0px;
     width: 250px;
-    min-height: 85vh;
+    min-height: 94vh;
     z-index: auto;
     box-shadow: black 0px 10px 20px ;
 }
@@ -24,7 +24,8 @@
 }
 
 .cartDiv{
-    box-shadow: #4488cc 0px 0px 10px ;
+    /* box-shadow: 0px 0px 10px ; */
+    background-color: #bad4fb;
     border-radius: 5px;
     padding: 5px;
     display: flex;

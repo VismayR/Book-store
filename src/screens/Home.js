@@ -80,9 +80,9 @@ const Home = () => {
   return (
     <>
       <Nav />
-      <div style={{ position: 'relative',backgroundColor:'#323337', minHeight:'90vh' }} >
+      <div style={{ position: 'relative', minHeight:'100vh', padding:'2%' }} >
         <div>
-          <div>
+          <div style={{display:'flex', justifyContent:'center'}}>
             <select  value={category} onChange={handleCatChange} style={{ width: '15rem', margin: '1rem', padding:'10px', borderRadius:'5px' }}>
               <option value='' selected>All Categories</option>
               {

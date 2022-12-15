@@ -30,14 +30,16 @@ const Signup = () => {
     };
 
     return (
-        <div  className='signinForm'>
-            <h1>Sign Up</h1>
-            <input className='inputs' type='text' placeholder='Name' onChange={(val) => setUserName(val.target.value)} required />
-            <input className='inputs' type='email' placeholder='Email' onChange={(val) => setEmail(val.target.value)} required />
-            <input className='inputs' type='password' placeholder='Password' onChange={(val) => setPassword(val.target.value)} required />
-            <input className='inputs' type='password' placeholder='Check Password' required />
-            <p>If already<Link to="/" className=''> Register</Link></p>
-            <button className='signin' onClick={postData}>Signup</button>
+        <div className='background'>
+            <div className='signinForm'>
+                <h1>Sign Up</h1>
+                <input className='inputs' type='text' placeholder='Name' onChange={(val) => setUserName(val.target.value)} required />
+                <input className='inputs' type='email' placeholder='Email' onChange={(val) => setEmail(val.target.value)} required />
+                <input className='inputs' type='password' placeholder='Password' onChange={(val) => setPassword(val.target.value)} required />
+                <input className='inputs' type='password' placeholder='Check Password' required />
+                <p>If already<Link to="/" className=''> Register</Link></p>
+                <button className='signin' onClick={postData}>Signup</button>
+            </div>
         </div>
     )
 }
