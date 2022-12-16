@@ -34,8 +34,20 @@ const Signup = () => {
             <div className='signinForm'>
                 <h1 className='loginHeader'>Create Account,</h1>
                 <p className='loginPara'>Sign up to get started!</p>
-                <input className='inputs' type='text' placeholder='Name' onChange={(val) => setUserName(val.target.value)} required />
-                <input className='inputs' type='email' placeholder='Email' onChange={(val) => setEmail(val.target.value)} required />
+                <input 
+                    className='inputs' 
+                    type='text' 
+                    placeholder='Name' 
+                    onChange={(val) => setUserName(val.target.value)} 
+                    required 
+                />
+                <input 
+                    className='inputs' 
+                    type='email' 
+                    placeholder='Email' 
+                    onChange={(val) => setEmail(val.target.value)} 
+                    required 
+                />
                 <input className='inputs' type='password' placeholder='Password' onChange={(val) => setPassword(val.target.value)} required />
                 <input className='inputs' type='password' placeholder='Check Password' required />
                 <p>I'm already a member, <Link to="/" className='links'> Sign in</Link></p>

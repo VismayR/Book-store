@@ -3,7 +3,6 @@ export const cart_item_id = "CART_ITEM_ID";
 export const updated_cart_item_list = "UPDATED_ITEM_LIST";
 export const cart_is_active = "CART_IS_ACTIVE";
 
-
 export const setName = (name) => ({
     type: set_name,
     payload: name

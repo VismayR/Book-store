@@ -41,7 +41,6 @@ const Home = () => {
     event.target.value != "" ?
       setDat(data.find((cat) => cat.category === event.target.value)?.subcategory) :
       setDat('')
-
   }
   
   //handling change in subcategories

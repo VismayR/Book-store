@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
@@ -15,9 +15,11 @@ const Signin = () => {
   //stores the api data inside state
   const [data, setData] = useState([])
 
-  //stores the input data which needs to be checked
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  // //stores the input data which needs to be checked
+  // const [email, setEmail] = useState('');
+  // const [password, setPassword] = useState('');
+  const email = useRef()
+  const password = useRef()
 
   //geting the data with the help of axios from api
   const getData = async () => {
@@ -31,7 +33,7 @@ const Signin = () => {
 
   //this checks the data if presend it directs to the inner screen else not
   const handleClick = () => {
-    const sendData = data.find((mail) => mail.email === email && mail.password === password);
+    const sendData = data.find((mail) => mail.email === email.current.value && mail.password === password.current.value);
     if (sendData) {
       dispatch(setName(sendData.name))
       sessionStorage.setItem('userName', sendData.name)
@@ -52,14 +54,16 @@ const Signin = () => {
           className='inputs' 
           type='email' 
           placeholder='Email' 
-          onChange={(val) => setEmail(val.target.value)} 
+          ref={email}
+          // onChange={(val) => setEmail(val.target.value)} 
           required 
         />
         <input 
           className='inputs' 
           type='password' 
           placeholder='Password' 
-          onChange={(val) => setPassword(val.target.value)}
+          ref={password}
+          // onChange={(val) => setPassword(val.target.value)}
           required 
         />
         <p>I'm a new user,<Link to="/signup" className='links'> Sign Up</Link></p>

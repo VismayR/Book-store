@@ -1,4 +1,4 @@
-import { cart_item_id, updated_cart_item_list } from "../action";
+import { cart_item_id, updated_cart_item_list, delete_cart_item } from "../action";
 
 const initialState = {
     data: []
