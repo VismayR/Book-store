@@ -1,41 +1,64 @@
-.background{
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    box-sizing: border-box;
-    background-image: url('../assets/images/bgBook3.jpg');
-    background-size: cover;
-    background-position: left;
-    padding-left: 10rem;
+.background {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  background-image: url('../assets/images/bgBook3.jpg');
+  background-size: cover;
+  background-position: left;
+  padding-left: 10rem;
 }
 
-.signinForm{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #bad4fb;
-    width: 400px;
-    padding: 3rem;
-    box-shadow: gray 0px 0px 10px;
-    border-radius: 10px;
-    /* margin: 50px; */
+.signinForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #bad4fb;
+  width: 400px;
+  padding: 3rem;
+  box-shadow: gray 0px 0px 10px;
+  border-radius: 10px;
+  /* margin: 50px; */
 }
 
-.inputs{
-    padding: 10px;
-    width: 85%;
-    margin: 10px;
-    border-radius: 5px;
+.inputs {
+  border: none;
+  padding: 10px;
+  width: 85%;
+  margin: 10px;
+  border-radius: 5px;
 }
 
-.signin{
-    text-decoration: none;
-    color: white;
-    background-color: blue;
-    border: none;
-    padding: 1rem;
-    border-radius: 5px;
-    width: 100px;
-    font-weight: 700;
-  }
+.signin {
+  text-decoration: none;
+  color: white;
+  background-color: blue;
+  border: none;
+  padding: 1rem;
+  border-radius: 5px;
+  width: 100px;
+  font-weight: 700;
+}
+
+.loginHeader {
+  margin-bottom: 0px;
+}
+
+.loginPara {
+  margin-top: 0px;
+}
+
+.links {
+  text-decoration: none;
+  font-weight: bold;
+  color: blue;
+}
+
+.filters {
+  width: 90%;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  border: none;
+}

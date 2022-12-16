@@ -31,10 +31,10 @@ const Signin = () => {
 
   //this checks the data if presend it directs to the inner screen else not
   const handleClick = () => {
-    const dat = data.find((mail) => mail.email === email && mail.password === password);
-    if (dat) {
-      dispatch(setName(dat.name))
-      sessionStorage.setItem('userName', dat.name)
+    const sendData = data.find((mail) => mail.email === email && mail.password === password);
+    if (sendData) {
+      dispatch(setName(sendData.name))
+      sessionStorage.setItem('userName', sendData.name)
       navigate('/home')
     }
   }
@@ -42,11 +42,28 @@ const Signin = () => {
   return (
     <div className='container background'>
       <div  className='signinForm'>
-        <h1>Sign In</h1>
-        <input className='inputs' type='email' placeholder='Email' onChange={(val) => setEmail(val.target.value)} required />
-        <input className='inputs' type='password' placeholder='Password' onChange={(val) => setPassword(val.target.value)} required />
-        <p>For <Link to="/signup" className=''> Registration</Link></p>
-        <button className='signin' onClick={handleClick}>Signin</button>
+        <h1 className='loginHeader'>
+          Welcome,
+        </h1>
+        <p className='loginPara'>
+          Sign in to continue!
+        </p>
+        <input 
+          className='inputs' 
+          type='email' 
+          placeholder='Email' 
+          onChange={(val) => setEmail(val.target.value)} 
+          required 
+        />
+        <input 
+          className='inputs' 
+          type='password' 
+          placeholder='Password' 
+          onChange={(val) => setPassword(val.target.value)}
+          required 
+        />
+        <p>I'm a new user,<Link to="/signup" className='links'> Sign Up</Link></p>
+        <button className='signin' onClick={handleClick}>Login</button>
       </div>
     </div>
   )

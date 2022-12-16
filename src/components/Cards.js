@@ -5,8 +5,8 @@ import axios from 'axios';
 
 const Cards = (props) => {
 
+  //getting data from the reducer
   const { data } = useSelector(state => state.cartItemsReducer);
-
   const dispatch = useDispatch();
 
   //changing the add button to delete button on click
@@ -28,31 +28,31 @@ const Cards = (props) => {
     await axios.delete(`https://6389ff3cc5356b25a20ec46a.mockapi.io/Cart/${d.cartId}`)
       .then(async () =>
         await axios.get(`https://6389ff3cc5356b25a20ec46a.mockapi.io/Cart`)
-          .then(res => 
+          .then(res =>
             dispatch(setUpdatedCart(res.data)),
             setSwitchButtons(false)
-            )
+          )
           .catch(error => console.log(error)),
       )
       .catch(error => console.log(error))
   }
 
   //handeling button change 
-  useEffect(()=>{
-    const w = data.find(res=>res.id === props.book.id)
-    if(w){
+  useEffect(() => {
+    const idPresent = data.find(res => res.id === props.book.id)
+    if (idPresent) {
       setSwitchButtons(true)
-    }else{
+    } else {
       setSwitchButtons(false)
-    } 
-  },[data])
+    }
+  }, [data])
 
   return (
     <>
-      <div style={{ borderRadius: '10px', width: '300px', height: '230px', padding: 'auto', margin: '40px 10px 30px', boxSizing: 'border-box', backgroundColor:'#4488cc', boxShadow:'10px 10px 15px gray' }}>
-        <h1 style={{ textAlign: 'center', fontSize: '20px', color:'black' }}>{props.book.name}</h1>
-        <p style={{ paddingLeft: '20px', paddingRight: '20px', margin: '0px', fontSize: '12px', height: "70px", color:'black' }}>{props.book.description}</p>
-        <div style={{ display: 'flex', justifyContent: 'space-between', marginRight: '20px', marginLeft: '20px', color:'black' }}>
+      <div style={{ borderRadius: '10px', width: '300px', height: '230px', padding: 'auto', margin: '40px 10px 30px', boxSizing: 'border-box', backgroundColor: '#4488cc', boxShadow: '10px 10px 15px gray' }}>
+        <h1 style={{ textAlign: 'center', fontSize: '20px', color: 'black' }}>{props.book.name}</h1>
+        <p style={{ paddingLeft: '20px', paddingRight: '20px', margin: '0px', fontSize: '12px', height: "70px", color: 'black' }}>{props.book.description}</p>
+        <div style={{ display: 'flex', justifyContent: 'space-between', marginRight: '20px', marginLeft: '20px', color: 'black' }}>
           <p style={{ fontWeight: "bold" }}>{props.book.author}</p>
           <p style={{ fontWeight: "bold" }}>₹<span>{props.book.price}</span></p>
         </div>

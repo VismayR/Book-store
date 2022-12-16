@@ -43,6 +43,7 @@ const Home = () => {
       setDat('')
 
   }
+  
   //handling change in subcategories
   const handleSubCatChange = (event) => {
     setSubCategory(event.target.value);
@@ -80,41 +81,40 @@ const Home = () => {
   return (
     <>
       <Nav />
-      <div style={{ position: 'relative', minHeight:'100vh', padding:'2%' }} >
+      <div style={{ position: 'relative', minHeight: '100vh', padding: '2%' }} >
         <div>
-          <div style={{display:'flex', justifyContent:'center'}}>
-            <select  value={category} onChange={handleCatChange} style={{ width: '15rem', margin: '1rem', padding:'10px', borderRadius:'5px' }}>
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <select value={category} onChange={handleCatChange} style={{ width: '15rem', margin: '1rem', padding: '10px', borderRadius: '5px' }}>
               <option value='' selected>All Categories</option>
               {
                 data && data.map((cat) => (<option key={cat.id} value={cat.category}>{cat.category}</option>))
               }
             </select>
-            <select  value={subCategory} onChange={handleSubCatChange} style={{ width: '20rem', margin: '1rem', padding:'10px', borderRadius:'5px' }}>
+            <select value={subCategory} onChange={handleSubCatChange} style={{ width: '20rem', margin: '1rem', padding: '10px', borderRadius: '5px' }}>
               <option value='' selected>All Subcategories</option>
               {
                 dat && dat.map((cat, index) => (<option key={index} value={cat}>{cat}</option>))
               }
             </select>
-            <input  placeholder='Search' onChange={handleSearch} style={{ margin: '1rem', padding:'10px', borderRadius:'5px' }} />
+            <input placeholder='Search' onChange={handleSearch} style={{ margin: '1rem', padding: '10px', borderRadius: '5px' }} />
           </div>
-          {/* <h2 style={{ textAlign: 'center' }}>All Books Display</h2> */}
           <div style={{ display: 'grid', gridTemplateColumns: 'auto auto auto auto' }}>
             {// map function is used for looping the data and displaying individual values. Filtering with category, Subcategory and search is done here.
               category !== '' ?
                 subCategory !== '' ?
                   bookdata.filter(book => book.author !== sessionStorage.getItem('userName') && book.category === category && book.subcategory === subCategory && book.name.match(search)).map((book) => (
-                    <Cards book={book} key={book.id}/>
+                    <Cards book={book} key={book.id} />
                   )) :
                   bookdata.filter(book => book.author !== sessionStorage.getItem('userName') && book.category === category && book.name.match(search)).map((book) => (
-                    <Cards book={book} key={book.id}/>
+                    <Cards book={book} key={book.id} />
                   )) :
                 bookdata.filter(book => book.author !== sessionStorage.getItem('userName') && book.name.match(search)).map((book) => (
-                  <Cards book={book}  key={book.id}/>
+                  <Cards book={book} key={book.id} />
                 ))
             }
           </div>
         </div>
-        <SideBar/>
+        <SideBar />
       </div>
     </>
   )

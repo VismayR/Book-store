@@ -7,7 +7,7 @@ const initialState = {
 export const cartActiveReducer = (state = initialState, action) => {
     switch (action.type) {
         case cart_is_active:
-            return {cartActive: action.payload};
+            return { cartActive: action.payload };
         default:
             return state;
     }

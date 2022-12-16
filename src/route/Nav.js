@@ -6,6 +6,7 @@ import { setCartIsActive, setName } from '../redux/action';
 
 const Nav = () => {
 
+  //getting the cart activation status
   const { cartActive } = useSelector(state => state.cartActiveReducer)
 
   //navigation function is used for navigating through the screens
@@ -13,25 +14,26 @@ const Nav = () => {
 
   //authentication
   const dispatch = useDispatch()
-    
-  const handleClick = ()=>{
-    // setIsActive(!isActive)
+
+  //setting state in redux
+  const handleClick = () => {
     dispatch(setCartIsActive(!cartActive))
   }
 
-  const signout =()=>{
-    sessionStorage.setItem('userName','')
+  //sign out and reseting all the data
+  const signout = () => {
+    sessionStorage.setItem('userName', '')
     dispatch(setName(''))
     navigate('/')
   }
 
   return (
     <div style={{ backgroundColor: "#4488cc", color: "white", padding: '1rem 2rem', display: 'flex', justifyContent: 'space-between' }}>
-      <div><span style={{fontWeight:'bold', fontSize:'24px'}}>{sessionStorage.getItem('userName')}</span></div>
+      <div><span style={{ fontWeight: 'bold', fontSize: '24px' }}>{sessionStorage.getItem('userName')}</span></div>
       <div>
         <button style={{ background: 'none', border: 'none', color: 'white', cursor: 'pointer' }} onClick={() => navigate('/addBook')}>Add book</button>
-        <button style={{ background: "none",border: 'none',cursor: 'pointer', color: "white" }} onClick={signout}>Sign out</button>
-        <img src={cart} style={{width:'25px',cursor: 'pointer'}} onClick={handleClick}/>
+        <button style={{ background: "none", border: 'none', cursor: 'pointer', color: "white" }} onClick={signout}>Sign out</button>
+        <img src={cart} style={{ width: '25px', cursor: 'pointer' }} onClick={handleClick} />
       </div>
     </div>
   )

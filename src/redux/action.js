@@ -12,14 +12,14 @@ export const setName = (name) => ({
 export const setCartId = (data) => ({
     type: cart_item_id,
     payload: {
-        data, 
+        data,
     }
 });
 
 export const setUpdatedCart = (data) => ({
     type: updated_cart_item_list,
     payload: {
-        data, 
+        data,
     }
 });
 

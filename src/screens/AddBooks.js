@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 
 
 const AddBooks = () => {
-
-    const { name } = useSelector(state => state)
 
     //navigation function is used for navigating through the screens 
     let navigate = useNavigate()
@@ -74,13 +71,13 @@ const AddBooks = () => {
             <h1>Add Book</h1>
             <input  className='inputs' type='text' placeholder='Book Title' onChange={(val) => setBookName(val.target.value)} required />
             <textarea  className='inputs' placeholder='Add Description' onChange={(val) => setDescription(val.target.value)} required />
-            <select  className='inputs' onChange={handleCatChange}>
+            <select  className='filters' onChange={handleCatChange}>
                 <option value=''>Select category</option>
                 {
                     data.map((cat) => (<option key={cat.id} value={cat.category}>{cat.category}</option>))
                 }
             </select>
-            <select  className='inputs' onChange={handleSubCatChange}>
+            <select  className='filters' onChange={handleSubCatChange}>
                 <option value=''>Select Subcategory</option>
                 {
                     dat.map((cat, index) => (<option key={index} value={cat}>{cat}</option>))
